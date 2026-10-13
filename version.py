@@ -1,2 +1,2 @@
-VERSION = '0.1.0-beta.2'
+VERSION = '0.1.1'
 RELEASE_DATE = '2026-10-13'

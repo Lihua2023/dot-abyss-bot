@@ -58,9 +58,9 @@ def main():
     for name in ('config.default.json', 'LICENSE', 'CHANGELOG.md'):
         shutil.copyfile(ROOT/name, release_dir/name)
     shutil.copyfile(ROOT/'release/README-用户版.md', release_dir/'README-用户版.md')
-    for filename, arguments in [('启动.cmd', ''), ('自检.cmd', 'self-test --gui-check'),
-                                ('环境检查.cmd', 'doctor'), ('只观察.cmd', 'observe'),
-                                ('恢复默认配置.cmd', 'reset-config')]:
+    shutil.copyfile(ROOT/'release/使用前先阅读.txt', release_dir/'使用前先阅读.txt')
+    shutil.copyfile(ROOT/'assets/guide/recommended-start.png', release_dir/'推荐起始界面.png')
+    for filename, arguments in [('启动.cmd', ''), ('自检.cmd', 'self-test --gui-check')]:
         (release_dir/filename).write_text('@echo off\n"%~dp0DotAbyss.exe" '+arguments+'\npause\n', encoding='ascii', newline='\r\n')
     deps = json.loads((ROOT/'THIRD_PARTY_NOTICES/dependencies.json').read_text(encoding='utf-8'))
     models = {}
