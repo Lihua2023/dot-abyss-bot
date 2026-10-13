@@ -2,7 +2,7 @@
 
 [下载 Windows 程序包](https://github.com/Lihua2023/dot-abyss-bot/releases/download/v0.1.1/DotAbyss-0.1.1-win-x64.zip) · [版本说明与全部文件](https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.1.1)
 
-免费分享，仅限非商业用途。无需安装 Python 或 Codex，完整解压后阅读“使用前先阅读.txt”，双击“启动.cmd”。“自检.cmd”是可选排错工具，不需要每次运行。
+免费分享，仅限非商业用途。完整解压后阅读“使用前先阅读.txt”，双击“启动.cmd”。“自检.cmd”是可选排错工具，不需要每次运行。
 
 ## 当前适用范围
 
