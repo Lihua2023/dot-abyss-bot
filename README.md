@@ -1,5 +1,7 @@
 # Dot Abyss 深渊识图脚本
 
+[下载 Windows 免安装版](https://github.com/Lihua2023/dot-abyss-bot/releases/download/v0.1.0-beta.2/DotAbyss-0.1.0-beta.2-win-x64.zip) · [版本说明与全部下载文件](https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.1.0-beta.2)
+
 Windows / DMM 客户端的本地识图自动化工具，使用 OpenCV、RapidOCR 和 PyAutoGUI。
 免费分享，禁止商用；见 [LICENSE](LICENSE)。源码可查看和非商业修改，第三方依赖适用各自许可。
 
