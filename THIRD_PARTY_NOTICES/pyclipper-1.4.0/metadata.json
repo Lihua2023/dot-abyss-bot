@@ -1,0 +1,10 @@
+{
+  "name": "pyclipper",
+  "version": "1.4.0",
+  "license": "MIT",
+  "homepage": "https://github.com/fonttools/pyclipper",
+  "project_urls": [],
+  "license_files": [
+    "pyclipper-1.4.0/pyclipper-1.4.0.dist-info/licenses/LICENSE"
+  ]
+}

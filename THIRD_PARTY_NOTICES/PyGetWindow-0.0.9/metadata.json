@@ -1,0 +1,10 @@
+{
+  "name": "PyGetWindow",
+  "version": "0.0.9",
+  "license": "BSD",
+  "homepage": "https://github.com/asweigart/pygetwindow",
+  "project_urls": [],
+  "license_files": [
+    "PyGetWindow-0.0.9/LICENSE.upstream.txt"
+  ]
+}

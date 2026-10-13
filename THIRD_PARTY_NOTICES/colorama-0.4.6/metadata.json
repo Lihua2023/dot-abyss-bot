@@ -1,0 +1,12 @@
+{
+  "name": "colorama",
+  "version": "0.4.6",
+  "license": null,
+  "homepage": null,
+  "project_urls": [
+    "Homepage, https://github.com/tartley/colorama"
+  ],
+  "license_files": [
+    "colorama-0.4.6/colorama-0.4.6.dist-info/licenses/LICENSE.txt"
+  ]
+}

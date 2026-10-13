@@ -1,0 +1,11 @@
+{
+  "name": "PyRect",
+  "version": "0.2.0",
+  "license": "BSD",
+  "homepage": "https://github.com/asweigart/pyrect",
+  "project_urls": [],
+  "license_files": [
+    "PyRect-0.2.0/pyrect-0.2.0.dist-info/licenses/AUTHORS.txt",
+    "PyRect-0.2.0/pyrect-0.2.0.dist-info/licenses/LICENSE.txt"
+  ]
+}

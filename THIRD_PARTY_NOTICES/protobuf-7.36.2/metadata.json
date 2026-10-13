@@ -1,0 +1,10 @@
+{
+  "name": "protobuf",
+  "version": "7.36.2",
+  "license": "3-Clause BSD License",
+  "homepage": "https://developers.google.com/protocol-buffers/",
+  "project_urls": [],
+  "license_files": [
+    "protobuf-7.36.2/protobuf-7.36.2.dist-info/LICENSE"
+  ]
+}

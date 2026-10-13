@@ -1,0 +1,390 @@
+[
+  {
+    "name": "altgraph",
+    "version": "0.17.5",
+    "license": "MIT",
+    "homepage": "https://altgraph.readthedocs.io",
+    "project_urls": [
+      "Documentation, https://altgraph.readthedocs.io/en/latest/",
+      "Issue tracker, https://github.com/ronaldoussoren/altgraph/issues",
+      "Repository, https://github.com/ronaldoussoren/altgraph"
+    ],
+    "license_files": [
+      "altgraph-0.17.5/altgraph-0.17.5.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "colorama",
+    "version": "0.4.6",
+    "license": null,
+    "homepage": null,
+    "project_urls": [
+      "Homepage, https://github.com/tartley/colorama"
+    ],
+    "license_files": [
+      "colorama-0.4.6/colorama-0.4.6.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "flatbuffers",
+    "version": "25.12.19",
+    "license": "Apache 2.0",
+    "homepage": "https://google.github.io/flatbuffers/",
+    "project_urls": [
+      "Documentation, https://google.github.io/flatbuffers/",
+      "Source, https://github.com/google/flatbuffers"
+    ],
+    "license_files": [
+      "flatbuffers-25.12.19/LICENSE.upstream.txt"
+    ]
+  },
+  {
+    "name": "MouseInfo",
+    "version": "0.1.3",
+    "license": "GPLv3+",
+    "homepage": "https://github.com/asweigart/mouseinfo",
+    "project_urls": [],
+    "license_files": [
+      "MouseInfo-0.1.3/LICENSE.upstream.txt"
+    ]
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.3",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "homepage": null,
+    "project_urls": [
+      "homepage, https://numpy.org",
+      "documentation, https://numpy.org/doc/",
+      "source, https://github.com/numpy/numpy",
+      "download, https://pypi.org/project/numpy/#files",
+      "tracker, https://github.com/numpy/numpy/issues",
+      "release notes, https://numpy.org/doc/stable/release"
+    ],
+    "license_files": [
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/LICENSE.txt",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/ma/LICENSE",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+      "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+      "numpy-2.5.3/numpy/_core/include/numpy/random/LICENSE.txt",
+      "numpy-2.5.3/numpy/ma/LICENSE",
+      "numpy-2.5.3/numpy/random/LICENSE.md"
+    ]
+  },
+  {
+    "name": "onnxruntime",
+    "version": "1.31.0",
+    "license": "MIT License",
+    "homepage": "https://onnxruntime.ai",
+    "project_urls": [],
+    "license_files": [
+      "onnxruntime-1.31.0/onnxruntime/LICENSE",
+      "onnxruntime-1.31.0/onnxruntime/ThirdPartyNotices.txt"
+    ]
+  },
+  {
+    "name": "opencv-python",
+    "version": "5.0.0.93",
+    "license": "Apache 2.0",
+    "homepage": "https://github.com/opencv/opencv-python",
+    "project_urls": [],
+    "license_files": [
+      "opencv-python-5.0.0.93/cv2/LICENSE-3RD-PARTY.txt",
+      "opencv-python-5.0.0.93/cv2/LICENSE.txt",
+      "opencv-python-5.0.0.93/opencv_python-5.0.0.93.dist-info/LICENSE-3RD-PARTY.txt",
+      "opencv-python-5.0.0.93/opencv_python-5.0.0.93.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "homepage": null,
+    "project_urls": [
+      "Documentation, https://packaging.pypa.io/",
+      "Source, https://github.com/pypa/packaging"
+    ],
+    "license_files": [
+      "packaging-26.3/packaging-26.3.dist-info/licenses/LICENSE",
+      "packaging-26.3/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "packaging-26.3/packaging-26.3.dist-info/licenses/LICENSE.BSD"
+    ]
+  },
+  {
+    "name": "pefile",
+    "version": "2024.8.26",
+    "license": "MIT",
+    "homepage": "https://github.com/erocarrera/pefile",
+    "project_urls": [],
+    "license_files": [
+      "pefile-2024.8.26/pefile-2024.8.26.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "12.3.0",
+    "license": "MIT-CMU",
+    "homepage": null,
+    "project_urls": [
+      "Release notes, https://pillow.readthedocs.io/en/stable/releasenotes/index.html",
+      "Changelog, https://github.com/python-pillow/Pillow/releases",
+      "Documentation, https://pillow.readthedocs.io",
+      "Funding, https://tidelift.com/subscription/pkg/pypi-pillow?utm_source=pypi-pillow&utm_medium=pypi",
+      "Homepage, https://python-pillow.github.io",
+      "Mastodon, https://fosstodon.org/@pillow",
+      "Source, https://github.com/python-pillow/Pillow"
+    ],
+    "license_files": [
+      "pillow-12.3.0/pillow-12.3.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "protobuf",
+    "version": "7.36.2",
+    "license": "3-Clause BSD License",
+    "homepage": "https://developers.google.com/protocol-buffers/",
+    "project_urls": [],
+    "license_files": [
+      "protobuf-7.36.2/protobuf-7.36.2.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "PyAutoGUI",
+    "version": "0.9.54",
+    "license": "BSD",
+    "homepage": "https://github.com/asweigart/pyautogui",
+    "project_urls": [],
+    "license_files": [
+      "PyAutoGUI-0.9.54/pyautogui-0.9.54.dist-info/licenses/AUTHORS.txt",
+      "PyAutoGUI-0.9.54/pyautogui-0.9.54.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pyclipper",
+    "version": "1.4.0",
+    "license": "MIT",
+    "homepage": "https://github.com/fonttools/pyclipper",
+    "project_urls": [],
+    "license_files": [
+      "pyclipper-1.4.0/pyclipper-1.4.0.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "PyGetWindow",
+    "version": "0.0.9",
+    "license": "BSD",
+    "homepage": "https://github.com/asweigart/pygetwindow",
+    "project_urls": [],
+    "license_files": [
+      "PyGetWindow-0.0.9/LICENSE.upstream.txt"
+    ]
+  },
+  {
+    "name": "pyinstaller",
+    "version": "6.22.3",
+    "license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+    "homepage": null,
+    "project_urls": [
+      "Homepage, https://pyinstaller.org",
+      "Documentation, https://pyinstaller.org",
+      "Source Code, https://github.com/pyinstaller/pyinstaller",
+      "Release Notes, https://pyinstaller.org/en/stable/CHANGES.html"
+    ],
+    "license_files": [
+      "pyinstaller-6.22.3/pyinstaller-6.22.3.dist-info/licenses/COPYING.txt"
+    ]
+  },
+  {
+    "name": "pyinstaller-hooks-contrib",
+    "version": "2026.8",
+    "license": null,
+    "homepage": "https://github.com/pyinstaller/pyinstaller-hooks-contrib",
+    "project_urls": [],
+    "license_files": [
+      "pyinstaller-hooks-contrib-2026.8/pyinstaller_hooks_contrib-2026.8.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "PyMsgBox",
+    "version": "2.0.1",
+    "license": "Copyright (c) 2014, Al Sweigart\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of the {organization} nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n",
+    "homepage": null,
+    "project_urls": [
+      "Homepage, https://github.com/asweigart/pymsgbox",
+      "Repository, https://github.com/asweigart/pymsgbox",
+      "Documentation, https://github.com/asweigart/pymsgbox"
+    ],
+    "license_files": [
+      "PyMsgBox-2.0.1/pymsgbox-2.0.1.dist-info/licenses/AUTHORS.txt",
+      "PyMsgBox-2.0.1/pymsgbox-2.0.1.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pyperclip",
+    "version": "1.11.0",
+    "license": "BSD",
+    "homepage": null,
+    "project_urls": [
+      "Homepage, https://github.com/asweigart/pyperclip"
+    ],
+    "license_files": [
+      "pyperclip-1.11.0/pyperclip-1.11.0.dist-info/licenses/AUTHORS.txt",
+      "pyperclip-1.11.0/pyperclip-1.11.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "PyRect",
+    "version": "0.2.0",
+    "license": "BSD",
+    "homepage": "https://github.com/asweigart/pyrect",
+    "project_urls": [],
+    "license_files": [
+      "PyRect-0.2.0/pyrect-0.2.0.dist-info/licenses/AUTHORS.txt",
+      "PyRect-0.2.0/pyrect-0.2.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "PyScreeze",
+    "version": "1.0.1",
+    "license": "MIT",
+    "homepage": "https://github.com/asweigart/pyscreeze",
+    "project_urls": [],
+    "license_files": [
+      "PyScreeze-1.0.1/pyscreeze-1.0.1.dist-info/licenses/AUTHORS.txt",
+      "PyScreeze-1.0.1/pyscreeze-1.0.1.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pytweening",
+    "version": "1.2.0",
+    "license": "MIT",
+    "homepage": "https://github.com/asweigart/pytweening",
+    "project_urls": [],
+    "license_files": [
+      "pytweening-1.2.0/pytweening-1.2.0.dist-info/licenses/AUTHORS.txt",
+      "pytweening-1.2.0/pytweening-1.2.0.dist-info/licenses/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "pywin32-ctypes",
+    "version": "0.2.3",
+    "license": "BSD-3-Clause",
+    "homepage": "https://github.com/enthought/pywin32-ctypes",
+    "project_urls": [],
+    "license_files": [
+      "pywin32-ctypes-0.2.3/pywin32_ctypes-0.2.3.dist-info/LICENSE.txt"
+    ]
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "license": "MIT",
+    "homepage": "https://pyyaml.org/",
+    "project_urls": [
+      "Bug Tracker, https://github.com/yaml/pyyaml/issues",
+      "CI, https://github.com/yaml/pyyaml/actions",
+      "Documentation, https://pyyaml.org/wiki/PyYAMLDocumentation",
+      "Mailing lists, http://lists.sourceforge.net/lists/listinfo/yaml-core",
+      "Source Code, https://github.com/yaml/pyyaml"
+    ],
+    "license_files": [
+      "PyYAML-6.0.3/pyyaml-6.0.3.dist-info/licenses/LICENSE"
+    ]
+  },
+  {
+    "name": "rapidocr-onnxruntime",
+    "version": "1.4.4",
+    "license": "Apache-2.0",
+    "homepage": "https://github.com/RapidAI/RapidOCR",
+    "project_urls": [
+      "Documentation, https://rapidai.github.io/RapidOCRDocs",
+      "Changelog, https://github.com/RapidAI/RapidOCR/releases"
+    ],
+    "license_files": [
+      "rapidocr-onnxruntime-1.4.4/LICENSE.upstream.txt"
+    ]
+  },
+  {
+    "name": "setuptools",
+    "version": "84.0.0",
+    "license": "MIT",
+    "homepage": null,
+    "project_urls": [
+      "Source, https://github.com/pypa/setuptools",
+      "Documentation, https://setuptools.pypa.io/",
+      "Changelog, https://setuptools.pypa.io/en/stable/history.html"
+    ],
+    "license_files": [
+      "setuptools-84.0.0/setuptools-84.0.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+      "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+      "setuptools-84.0.0/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+      "setuptools-84.0.0/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+      "setuptools-84.0.0/setuptools/config/NOTICE",
+      "setuptools-84.0.0/setuptools/config/_validate_pyproject/NOTICE"
+    ]
+  },
+  {
+    "name": "shapely",
+    "version": "2.2.0",
+    "license": "BSD-3-Clause",
+    "homepage": null,
+    "project_urls": [
+      "Documentation, https://shapely.readthedocs.io/",
+      "Repository, https://github.com/shapely/shapely"
+    ],
+    "license_files": [
+      "shapely-2.2.0/shapely-2.2.0.dist-info/licenses/LICENSE.txt",
+      "shapely-2.2.0/shapely-2.2.0.dist-info/licenses/LICENSE_GEOS",
+      "shapely-2.2.0/shapely-2.2.0.dist-info/licenses/LICENSE_win32"
+    ]
+  },
+  {
+    "name": "six",
+    "version": "1.17.0",
+    "license": "MIT",
+    "homepage": "https://github.com/benjaminp/six",
+    "project_urls": [],
+    "license_files": [
+      "six-1.17.0/six-1.17.0.dist-info/LICENSE"
+    ]
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1",
+    "license": "MPL-2.0 AND MIT",
+    "homepage": null,
+    "project_urls": [
+      "homepage, https://tqdm.github.io",
+      "repository, https://github.com/tqdm/tqdm",
+      "changelog, https://tqdm.github.io/releases",
+      "wiki, https://github.com/tqdm/tqdm/wiki"
+    ],
+    "license_files": [
+      "tqdm-4.70.1/tqdm-4.70.1.dist-info/licenses/LICENCE"
+    ]
+  }
+]

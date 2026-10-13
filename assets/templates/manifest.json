@@ -1,0 +1,1554 @@
+{
+  "exploration_failed_title": {
+    "file": "exploration_failed_title.png",
+    "roi": [
+      595,
+      205,
+      880,
+      315
+    ],
+    "sample": "exploration_failed_1920",
+    "crop": [
+      620,
+      225,
+      856,
+      295
+    ]
+  },
+  "lost_signal_title": {
+    "file": "lost_signal_title.png",
+    "roi": [
+      585,
+      145,
+      890,
+      220
+    ],
+    "sample": "lost_signal_confirm_1920",
+    "crop": [
+      610,
+      165,
+      865,
+      199
+    ]
+  },
+  "lost_signal_decline": {
+    "file": "lost_signal_decline.png",
+    "roi": [
+      535,
+      650,
+      705,
+      725
+    ],
+    "sample": "lost_signal_confirm_1920",
+    "crop": [
+      566,
+      673,
+      675,
+      701
+    ]
+  },
+  "erosion_notice80_body": {
+    "file": "erosion_notice80_body.png",
+    "roi": [
+      525,
+      365,
+      935,
+      440
+    ],
+    "sample": "erosion_notice80_1920",
+    "crop": [
+      550,
+      385,
+      910,
+      420
+    ]
+  },
+  "erosion_notice80_next": {
+    "file": "erosion_notice80_next.png",
+    "roi": [
+      625,
+      640,
+      855,
+      715
+    ],
+    "sample": "erosion_notice80_1920",
+    "crop": [
+      651,
+      660,
+      827,
+      692
+    ]
+  },
+  "entrance_tap_pattern": {
+    "file": "entrance_tap_pattern.png",
+    "roi": [
+      660,
+      265,
+      845,
+      365
+    ],
+    "sample": "entrance_1920_after_return",
+    "crop": [
+      712,
+      294,
+      801,
+      337
+    ]
+  },
+  "entrance_ticket_pattern": {
+    "file": "entrance_ticket_pattern.png",
+    "roi": [
+      680,
+      520,
+      800,
+      590
+    ],
+    "sample": "entrance_1920_after_return",
+    "crop": [
+      716,
+      543,
+      747,
+      563
+    ]
+  },
+  "shop_close_x": {
+    "file": "shop_close_x.png",
+    "roi": [
+      1360,
+      35,
+      1455,
+      110
+    ],
+    "sample": "shop35_today",
+    "crop": [
+      1392,
+      52,
+      1431,
+      90
+    ]
+  },
+  "main_menu_auto_icon": {
+    "file": "main_menu_auto_icon.png",
+    "roi": [
+      100,
+      210,
+      220,
+      320
+    ],
+    "sample": "map_menu_accidental",
+    "crop": [
+      122,
+      232,
+      200,
+      300
+    ]
+  },
+  "main_menu_help_icon": {
+    "file": "main_menu_help_icon.png",
+    "roi": [
+      100,
+      320,
+      220,
+      430
+    ],
+    "sample": "map_menu_accidental",
+    "crop": [
+      124,
+      342,
+      197,
+      410
+    ]
+  },
+  "main_menu_close": {
+    "file": "main_menu_close.png",
+    "roi": [
+      1330,
+      120,
+      1425,
+      195
+    ],
+    "sample": "map_menu_accidental",
+    "crop": [
+      1361,
+      140,
+      1396,
+      175
+    ]
+  },
+  "map_floor_label_wide": {
+    "file": "map_floor_label_wide.png",
+    "roi": [
+      30,
+      105,
+      125,
+      154
+    ],
+    "sample": "map32_resolution_current",
+    "crop": [
+      67,
+      119,
+      112,
+      141
+    ]
+  },
+  "code_decline_wide": {
+    "file": "code_decline_wide.png",
+    "roi": [
+      405,
+      740,
+      620,
+      854
+    ],
+    "sample": "code_reward_1920_capacity37",
+    "crop": [
+      437,
+      776,
+      588,
+      806
+    ]
+  },
+  "shop_bag_symbol": {
+    "file": "shop_bag_symbol.png",
+    "roi": [
+      790,
+      190,
+      1160,
+      360
+    ],
+    "sample": "shop35_today",
+    "crop": [
+      1065,
+      210,
+      1127,
+      290
+    ]
+  },
+  "erosion_warning_body": {
+    "file": "erosion_warning_body.png",
+    "roi": [
+      390,
+      350,
+      990,
+      420
+    ],
+    "sample": "event_erosion_warning",
+    "crop": [
+      410,
+      375,
+      953,
+      400
+    ]
+  },
+  "erosion_warning_cancel": {
+    "file": "erosion_warning_cancel.png",
+    "roi": [
+      386,
+      550,
+      725,
+      615
+    ],
+    "sample": "event_erosion_warning",
+    "crop": [
+      420,
+      567,
+      681,
+      596
+    ]
+  },
+  "event_special_word": {
+    "file": "event_special_word.png",
+    "roi": [
+      70,
+      565,
+      1395,
+      680
+    ],
+    "sample": "event_three_special_jp",
+    "crop": [
+      313,
+      619,
+      350,
+      640
+    ]
+  },
+  "event_erosion_word": {
+    "file": "event_erosion_word.png",
+    "roi": [
+      70,
+      565,
+      1395,
+      680
+    ],
+    "sample": "event_four_cold",
+    "crop": [
+      155,
+      634,
+      211,
+      656
+    ]
+  },
+  "event_erosion_up": {
+    "file": "event_erosion_up.png",
+    "roi": [
+      70,
+      565,
+      1395,
+      680
+    ],
+    "sample": "event_four_cold",
+    "crop": [
+      245,
+      634,
+      282,
+      656
+    ]
+  },
+  "event_code_effect": {
+    "file": "event_code_effect.png",
+    "roi": [
+      70,
+      565,
+      1395,
+      680
+    ],
+    "sample": "event_four_cold",
+    "crop": [
+      1175,
+      591,
+      1329,
+      611
+    ]
+  },
+  "network_title": {
+    "file": "network_title.png",
+    "roi": [
+      560,
+      50,
+      930,
+      122
+    ],
+    "sample": "network_timeout",
+    "crop": [
+      596,
+      72,
+      874,
+      104
+    ]
+  },
+  "network_body": {
+    "file": "network_body.png",
+    "roi": [
+      520,
+      375,
+      940,
+      447
+    ],
+    "sample": "network_timeout",
+    "crop": [
+      550,
+      397,
+      902,
+      429
+    ]
+  },
+  "network_retry": {
+    "file": "network_retry.png",
+    "roi": [
+      620,
+      747,
+      856,
+      818
+    ],
+    "sample": "network_timeout",
+    "crop": [
+      649,
+      763,
+      826,
+      800
+    ]
+  },
+  "transport_title": {
+    "file": "transport_title.png",
+    "roi": [
+      425,
+      40,
+      1040,
+      99
+    ],
+    "sample": "transport40",
+    "crop": [
+      460,
+      57,
+      1008,
+      86
+    ]
+  },
+  "transport_cancel": {
+    "file": "transport_cancel.png",
+    "roi": [
+      757,
+      733,
+      991,
+      801
+    ],
+    "sample": "transport40",
+    "crop": [
+      794,
+      746,
+      956,
+      783
+    ]
+  },
+  "transport_list": {
+    "file": "transport_list.png",
+    "roi": [
+      238,
+      320,
+      437,
+      380
+    ],
+    "sample": "transport_today",
+    "crop": [
+      255,
+      337,
+      410,
+      361
+    ]
+  },
+  "transport_selected_mark": {
+    "file": "transport_selected_mark.png",
+    "roi": [
+      260,
+      395,
+      1180,
+      685
+    ],
+    "sample": "transport_selected_today",
+    "crop": [
+      320,
+      421,
+      380,
+      440
+    ]
+  },
+  "transport_skip_item": {
+    "file": "transport_skip_item.png",
+    "roi": [
+      260,
+      395,
+      1180,
+      700
+    ],
+    "sample": "transport40",
+    "crop": [
+      311,
+      612,
+      390,
+      656
+    ]
+  },
+  "boss_continue_title": {
+    "file": "boss_continue_title.png",
+    "roi": [
+      548,
+      89,
+      930,
+      169
+    ],
+    "sample": "boss_continue40",
+    "crop": [
+      583,
+      110,
+      889,
+      151
+    ]
+  },
+  "boss_continue_button": {
+    "file": "boss_continue_button.png",
+    "roi": [
+      865,
+      660,
+      1085,
+      724
+    ],
+    "sample": "boss_continue40",
+    "crop": [
+      893,
+      678,
+      1047,
+      711
+    ]
+  },
+  "boss_return_button": {
+    "file": "boss_return_button.png",
+    "roi": [
+      620,
+      660,
+      850,
+      724
+    ],
+    "sample": "boss_continue40",
+    "crop": [
+      661,
+      678,
+      806,
+      711
+    ]
+  },
+  "return_confirm_message": {
+    "file": "return_confirm_message.png",
+    "roi": [
+      570,
+      354,
+      903,
+      416
+    ],
+    "sample": "return_confirm40",
+    "crop": [
+      605,
+      373,
+      863,
+      400
+    ]
+  },
+  "return_confirm_button": {
+    "file": "return_confirm_button.png",
+    "roi": [
+      760,
+      550,
+      944,
+      615
+    ],
+    "sample": "return_confirm40",
+    "crop": [
+      796,
+      569,
+      905,
+      597
+    ]
+  },
+  "return_score_heading": {
+    "file": "return_score_heading.png",
+    "roi": [
+      660,
+      114,
+      805,
+      168
+    ],
+    "sample": "return_score40",
+    "crop": [
+      691,
+      129,
+      781,
+      151
+    ]
+  },
+  "return_score_label": {
+    "file": "return_score_label.png",
+    "roi": [
+      649,
+      353,
+      825,
+      419
+    ],
+    "sample": "return_score40",
+    "crop": [
+      681,
+      375,
+      790,
+      399
+    ]
+  },
+  "return_score_skip": {
+    "file": "return_score_skip.png",
+    "roi": [
+      1318,
+      35,
+      1445,
+      100
+    ],
+    "sample": "return_score40",
+    "crop": [
+      1344,
+      52,
+      1414,
+      83
+    ]
+  },
+  "return_score_next": {
+    "file": "return_score_next.png",
+    "roi": [
+      620,
+      610,
+      850,
+      675
+    ],
+    "sample": "return_score40",
+    "crop": [
+      645,
+      628,
+      827,
+      656
+    ]
+  },
+  "return_items_heading": {
+    "file": "return_items_heading.png",
+    "roi": [
+      610,
+      115,
+      860,
+      164
+    ],
+    "sample": "return_points40",
+    "crop": [
+      639,
+      128,
+      830,
+      151
+    ]
+  },
+  "return_bonus_heading": {
+    "file": "return_bonus_heading.png",
+    "roi": [
+      610,
+      455,
+      861,
+      504
+    ],
+    "sample": "return_points40",
+    "crop": [
+      640,
+      469,
+      831,
+      490
+    ]
+  },
+  "transport_empty": {
+    "file": "transport_empty.png",
+    "roi": [
+      488,
+      161,
+      980,
+      285
+    ],
+    "sample": "transport40",
+    "crop": [
+      529,
+      202,
+      572,
+      245
+    ]
+  },
+  "entrance_records": {
+    "file": "entrance_records.png",
+    "roi": [
+      1220,
+      115,
+      1370,
+      171
+    ],
+    "sample": "entrance_today",
+    "crop": [
+      1255,
+      133,
+      1342,
+      158
+    ]
+  },
+  "entrance_keys": {
+    "file": "entrance_keys.png",
+    "roi": [
+      548,
+      149,
+      780,
+      208
+    ],
+    "sample": "entrance_today",
+    "crop": [
+      575,
+      167,
+      754,
+      189
+    ]
+  },
+  "checkpoint_heading": {
+    "file": "checkpoint_heading.png",
+    "roi": [
+      610,
+      86,
+      860,
+      149
+    ],
+    "sample": "checkpoint_today",
+    "crop": [
+      639,
+      104,
+      830,
+      132
+    ]
+  },
+  "checkpoint_card": {
+    "file": "checkpoint_card.png",
+    "roi": [
+      825,
+      201,
+      1100,
+      291
+    ],
+    "sample": "checkpoint_today",
+    "crop": [
+      854,
+      219,
+      1075,
+      274
+    ]
+  },
+  "action_header": {
+    "file": "action_header.png",
+    "roi": [
+      530,
+      37,
+      952,
+      105
+    ],
+    "sample": "event_music",
+    "crop": [
+      557,
+      57,
+      915,
+      88
+    ]
+  },
+  "recovery_purify": {
+    "file": "recovery_purify.png",
+    "roi": [
+      244,
+      460,
+      395,
+      542
+    ],
+    "sample": "recovery_options",
+    "crop": [
+      283,
+      485,
+      357,
+      519
+    ]
+  },
+  "recovery_rest": {
+    "file": "recovery_rest.png",
+    "roi": [
+      650,
+      460,
+      820,
+      542
+    ],
+    "sample": "recovery_options",
+    "crop": [
+      698,
+      485,
+      772,
+      519
+    ]
+  },
+  "action_confirm": {
+    "file": "action_confirm.png",
+    "roi": [
+      620,
+      746,
+      850,
+      818
+    ],
+    "sample": "recovery_selected",
+    "crop": [
+      637,
+      762,
+      831,
+      802
+    ]
+  },
+  "event_result_next": {
+    "file": "event_result_next.png",
+    "roi": [
+      620,
+      563,
+      851,
+      625
+    ],
+    "sample": "event_music_result",
+    "crop": [
+      650,
+      576,
+      821,
+      607
+    ]
+  },
+  "event_result_bar": {
+    "file": "event_result_bar.png",
+    "roi": [
+      0,
+      311,
+      430,
+      350
+    ],
+    "sample": "event_music_result",
+    "crop": [
+      5,
+      323,
+      400,
+      338
+    ]
+  },
+  "item_reward_next": {
+    "file": "item_reward_next.png",
+    "roi": [
+      620,
+      604,
+      851,
+      666
+    ],
+    "sample": "event_item_reward",
+    "crop": [
+      650,
+      618,
+      821,
+      647
+    ]
+  },
+  "item_reward_title": {
+    "file": "item_reward_title.png",
+    "roi": [
+      580,
+      228,
+      890,
+      320
+    ],
+    "sample": "event_item_reward",
+    "crop": [
+      615,
+      249,
+      854,
+      300
+    ]
+  },
+  "shop_anchor": {
+    "file": "shop_anchor.png",
+    "roi": [
+      1208,
+      132,
+      1438,
+      340
+    ],
+    "sample": "shop39",
+    "crop": [
+      1256,
+      176,
+      1395,
+      324
+    ]
+  },
+  "shop_key_label": {
+    "file": "shop_key_label.png",
+    "roi": [
+      1250,
+      333,
+      1400,
+      387
+    ],
+    "sample": "shop35_today",
+    "crop": [
+      1276,
+      348,
+      1375,
+      370
+    ]
+  },
+  "shop_price_coin": {
+    "file": "shop_price_coin.png",
+    "roi": [
+      998,
+      724,
+      1080,
+      786
+    ],
+    "sample": "shop39",
+    "crop": [
+      1031,
+      741,
+      1055,
+      767
+    ]
+  },
+  "shop_confirm_title": {
+    "file": "shop_confirm_title.png",
+    "roi": [
+      610,
+      140,
+      857,
+      205
+    ],
+    "sample": "shop_code_confirm",
+    "crop": [
+      648,
+      157,
+      824,
+      188
+    ]
+  },
+  "shop_buy": {
+    "file": "shop_buy.png",
+    "roi": [
+      746,
+      665,
+      960,
+      725
+    ],
+    "sample": "shop_code_confirm",
+    "crop": [
+      823,
+      681,
+      882,
+      711
+    ]
+  },
+  "shop_sold": {
+    "file": "shop_sold.png",
+    "roi": [
+      995,
+      535,
+      1205,
+      622
+    ],
+    "sample": "shop_sold_out",
+    "crop": [
+      1025,
+      566,
+      1165,
+      597
+    ]
+  },
+  "resume": {
+    "file": "resume.png",
+    "roi": [
+      630,
+      556,
+      897,
+      650
+    ],
+    "sample": "entrance_resume40",
+    "crop": [
+      670,
+      584,
+      850,
+      630
+    ]
+  },
+  "resume_yellow": {
+    "file": "resume_yellow.png",
+    "roi": [
+      630,
+      556,
+      897,
+      650
+    ],
+    "sample": "entrance_resume_today",
+    "crop": [
+      670,
+      584,
+      850,
+      630
+    ]
+  },
+  "erosion_zero": {
+    "file": "erosion_zero.png",
+    "roi": [
+      1390,
+      145,
+      1455,
+      185
+    ],
+    "sample": "map35",
+    "crop": [
+      1414,
+      153,
+      1436,
+      177
+    ]
+  },
+  "formation_title": {
+    "file": "formation_title.png",
+    "roi": [
+      100,
+      40,
+      220,
+      112
+    ],
+    "sample": "formation",
+    "crop": [
+      123,
+      56,
+      185,
+      94
+    ]
+  },
+  "formation_title_jp": {
+    "file": "formation_title_jp.png",
+    "roi": [
+      100,
+      40,
+      220,
+      112
+    ],
+    "sample": "formation_watermark_jp",
+    "crop": [
+      123,
+      56,
+      185,
+      94
+    ]
+  },
+  "sortie": {
+    "file": "sortie.png",
+    "roi": [
+      1200,
+      750,
+      1460,
+      844
+    ],
+    "sample": "formation",
+    "crop": [
+      1277,
+      778,
+      1404,
+      815
+    ]
+  },
+  "skip_title": {
+    "file": "skip_title.png",
+    "roi": [
+      610,
+      245,
+      860,
+      315
+    ],
+    "sample": "skip_confirm",
+    "crop": [
+      645,
+      264,
+      824,
+      301
+    ]
+  },
+  "no_skip": {
+    "file": "no_skip.png",
+    "roi": [
+      420,
+      550,
+      620,
+      620
+    ],
+    "sample": "skip_confirm",
+    "crop": [
+      468,
+      571,
+      570,
+      598
+    ]
+  },
+  "key_title": {
+    "file": "key_title.png",
+    "roi": [
+      565,
+      115,
+      890,
+      183
+    ],
+    "sample": "key_confirm",
+    "crop": [
+      612,
+      133,
+      858,
+      169
+    ]
+  },
+  "use_key": {
+    "file": "use_key.png",
+    "roi": [
+      745,
+      685,
+      960,
+      748
+    ],
+    "sample": "key_confirm",
+    "crop": [
+      823,
+      700,
+      881,
+      730
+    ]
+  },
+  "party_warning": {
+    "file": "party_warning.png",
+    "roi": [
+      480,
+      270,
+      1000,
+      340
+    ],
+    "sample": "party_confirm",
+    "crop": [
+      517,
+      291,
+      953,
+      319
+    ]
+  },
+  "challenge": {
+    "file": "challenge.png",
+    "roi": [
+      748,
+      620,
+      958,
+      680
+    ],
+    "sample": "party_confirm",
+    "crop": [
+      823,
+      634,
+      879,
+      665
+    ]
+  },
+  "code_header": {
+    "file": "code_header.png",
+    "roi": [
+      620,
+      85,
+      866,
+      145
+    ],
+    "sample": "code_select",
+    "crop": [
+      643,
+      101,
+      843,
+      130
+    ]
+  },
+  "reroll": {
+    "file": "reroll.png",
+    "roi": [
+      620,
+      720,
+      826,
+      780
+    ],
+    "sample": "code_select",
+    "crop": [
+      648,
+      733,
+      801,
+      763
+    ]
+  },
+  "code_decline": {
+    "file": "code_decline.png",
+    "roi": [
+      410,
+      720,
+      605,
+      810
+    ],
+    "sample": "code_select",
+    "crop": [
+      434,
+      746,
+      585,
+      781
+    ]
+  },
+  "receive_enabled": {
+    "file": "receive_enabled.png",
+    "roi": [
+      845,
+      720,
+      1035,
+      810
+    ],
+    "sample": "code_selected",
+    "crop": [
+      854,
+      729,
+      1025,
+      800
+    ]
+  },
+  "code_confirm": {
+    "file": "code_confirm.png",
+    "roi": [
+      600,
+      754,
+      900,
+      825
+    ],
+    "sample": "code_received",
+    "crop": [
+      649,
+      777,
+      823,
+      808
+    ]
+  },
+  "code_received_message": {
+    "file": "code_received_message.png",
+    "roi": [
+      510,
+      187,
+      970,
+      245
+    ],
+    "sample": "code_received",
+    "crop": [
+      536,
+      202,
+      942,
+      230
+    ]
+  },
+  "reward_title": {
+    "file": "reward_title.png",
+    "roi": [
+      610,
+      100,
+      875,
+      180
+    ],
+    "sample": "code_received",
+    "crop": [
+      651,
+      124,
+      821,
+      162
+    ]
+  },
+  "result_next": {
+    "file": "result_next.png",
+    "roi": [
+      1285,
+      745,
+      1456,
+      829
+    ],
+    "sample": "battle_result",
+    "crop": [
+      1306,
+      760,
+      1433,
+      808
+    ]
+  },
+  "quest_clear": {
+    "file": "quest_clear.png",
+    "roi": [
+      10,
+      35,
+      440,
+      125
+    ],
+    "sample": "battle_result",
+    "crop": [
+      27,
+      54,
+      370,
+      103
+    ]
+  },
+  "battle_auto": {
+    "file": "battle_auto.png",
+    "roi": [
+      1030,
+      785,
+      1185,
+      835
+    ],
+    "sample": "battle",
+    "crop": [
+      1050,
+      798,
+      1173,
+      820
+    ]
+  },
+  "battle_speed": {
+    "file": "battle_speed.png",
+    "roi": [
+      1188,
+      785,
+      1343,
+      835
+    ],
+    "sample": "battle",
+    "crop": [
+      1205,
+      798,
+      1330,
+      820
+    ]
+  },
+  "battle_menu": {
+    "file": "battle_menu.png",
+    "roi": [
+      1340,
+      44,
+      1455,
+      116
+    ],
+    "sample": "battle_watermark",
+    "crop": [
+      1380,
+      66,
+      1410,
+      92
+    ]
+  },
+  "battle_clock": {
+    "file": "battle_clock.png",
+    "roi": [
+      1320,
+      105,
+      1400,
+      157
+    ],
+    "sample": "battle_watermark",
+    "crop": [
+      1350,
+      118,
+      1371,
+      139
+    ]
+  },
+  "map_title": {
+    "file": "map_title.png",
+    "roi": [
+      103,
+      40,
+      205,
+      112
+    ],
+    "sample": "map31",
+    "crop": [
+      126,
+      56,
+      185,
+      95
+    ]
+  },
+  "map_floor_label": {
+    "file": "map_floor_label.png",
+    "roi": [
+      20,
+      110,
+      110,
+      156
+    ],
+    "sample": "map31",
+    "crop": [
+      43,
+      122,
+      92,
+      146
+    ]
+  },
+  "route_arrow": {
+    "file": "route_arrow.png",
+    "roi": [
+      150,
+      180,
+      1300,
+      555
+    ],
+    "sample": "map31",
+    "crop": [
+      696,
+      325,
+      772,
+      367
+    ]
+  },
+  "route_arrow_edge": {
+    "file": "route_arrow_edge.png",
+    "roi": [
+      35,
+      195,
+      1460,
+      550
+    ],
+    "sample": "map32_right_edge",
+    "crop": [
+      1313,
+      327,
+      1391,
+      372
+    ]
+  },
+  "node_elite_text": {
+    "file": "node_elite_text.png",
+    "roi": [
+      0,
+      400,
+      1300,
+      800
+    ],
+    "sample": "map32_today",
+    "crop": [
+      299,
+      572,
+      345,
+      593
+    ]
+  },
+  "node_battle_text": {
+    "file": "node_battle_text.png",
+    "roi": [
+      0,
+      400,
+      1300,
+      800
+    ],
+    "sample": "map_move_today",
+    "crop": [
+      298,
+      509,
+      348,
+      534
+    ]
+  },
+  "node_chest_text": {
+    "file": "node_chest_text.png",
+    "roi": [
+      0,
+      400,
+      1300,
+      864
+    ],
+    "sample": "map_chest_label",
+    "crop": [
+      710,
+      640,
+      759,
+      666
+    ]
+  },
+  "node_event_text": {
+    "file": "node_event_text.png",
+    "roi": [
+      0,
+      400,
+      1470,
+      864
+    ],
+    "sample": "map33_event",
+    "crop": [
+      1095,
+      570,
+      1201,
+      598
+    ]
+  },
+  "node_recovery_text": {
+    "file": "node_recovery_text.png",
+    "roi": [
+      0,
+      400,
+      1470,
+      864
+    ],
+    "sample": "map34_recovery_shop",
+    "crop": [
+      500,
+      570,
+      557,
+      598
+    ]
+  },
+  "node_shop_text": {
+    "file": "node_shop_text.png",
+    "roi": [
+      0,
+      400,
+      1470,
+      864
+    ],
+    "sample": "map34_recovery_shop",
+    "crop": [
+      886,
+      570,
+      996,
+      598
+    ]
+  },
+  "chest_title": {
+    "file": "chest_title.png",
+    "roi": [
+      535,
+      35,
+      935,
+      106
+    ],
+    "sample": "chest_options79",
+    "crop": [
+      566,
+      54,
+      905,
+      90
+    ]
+  },
+  "chest_key_cost": {
+    "file": "chest_key_cost.png",
+    "roi": [
+      245,
+      453,
+      396,
+      547
+    ],
+    "sample": "chest_options79",
+    "crop": [
+      274,
+      473,
+      360,
+      528
+    ]
+  },
+  "chest_animation_skip": {
+    "file": "chest_animation_skip.png",
+    "roi": [
+      1300,
+      36,
+      1469,
+      104
+    ],
+    "sample": "chest_animation79",
+    "crop": [
+      1328,
+      51,
+      1452,
+      89
+    ]
+  },
+  "preferred_erosion_code_title": {
+    "file": "preferred_erosion_code_title.png",
+    "roi": [
+      175,
+      416,
+      1300,
+      470
+    ],
+    "sample": "preferred_erosion_code_card",
+    "crop": [
+      174,
+      274,
+      361,
+      306
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# Windows x64 / Python 3.12. Full transitive versions and hashes: requirements-win-x64.lock
+opencv-python==5.0.0.93
+numpy==2.5.3
+Pillow==12.3.0
+PyAutoGUI==0.9.54
+rapidocr-onnxruntime==1.4.4
+onnxruntime==1.31.0

@@ -1,0 +1,15 @@
+{
+  "name": "tqdm",
+  "version": "4.70.1",
+  "license": "MPL-2.0 AND MIT",
+  "homepage": null,
+  "project_urls": [
+    "homepage, https://tqdm.github.io",
+    "repository, https://github.com/tqdm/tqdm",
+    "changelog, https://tqdm.github.io/releases",
+    "wiki, https://github.com/tqdm/tqdm/wiki"
+  ],
+  "license_files": [
+    "tqdm-4.70.1/tqdm-4.70.1.dist-info/licenses/LICENCE"
+  ]
+}

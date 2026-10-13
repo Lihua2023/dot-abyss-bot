@@ -1,0 +1,15 @@
+{
+  "name": "pyinstaller",
+  "version": "6.22.3",
+  "license": "GPLv2-or-later with a special exception which allows to use PyInstaller to build and distribute non-free programs (including commercial ones)",
+  "homepage": null,
+  "project_urls": [
+    "Homepage, https://pyinstaller.org",
+    "Documentation, https://pyinstaller.org",
+    "Source Code, https://github.com/pyinstaller/pyinstaller",
+    "Release Notes, https://pyinstaller.org/en/stable/CHANGES.html"
+  ],
+  "license_files": [
+    "pyinstaller-6.22.3/pyinstaller-6.22.3.dist-info/licenses/COPYING.txt"
+  ]
+}

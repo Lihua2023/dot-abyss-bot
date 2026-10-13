@@ -1,0 +1,13 @@
+{
+  "name": "rapidocr-onnxruntime",
+  "version": "1.4.4",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/RapidAI/RapidOCR",
+  "project_urls": [
+    "Documentation, https://rapidai.github.io/RapidOCRDocs",
+    "Changelog, https://github.com/RapidAI/RapidOCR/releases"
+  ],
+  "license_files": [
+    "rapidocr-onnxruntime-1.4.4/LICENSE.upstream.txt"
+  ]
+}

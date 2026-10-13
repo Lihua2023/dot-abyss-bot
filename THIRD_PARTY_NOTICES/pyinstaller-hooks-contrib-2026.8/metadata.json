@@ -1,0 +1,10 @@
+{
+  "name": "pyinstaller-hooks-contrib",
+  "version": "2026.8",
+  "license": null,
+  "homepage": "https://github.com/pyinstaller/pyinstaller-hooks-contrib",
+  "project_urls": [],
+  "license_files": [
+    "pyinstaller-hooks-contrib-2026.8/pyinstaller_hooks_contrib-2026.8.dist-info/licenses/LICENSE"
+  ]
+}

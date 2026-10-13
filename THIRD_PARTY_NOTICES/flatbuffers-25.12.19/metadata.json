@@ -1,0 +1,13 @@
+{
+  "name": "flatbuffers",
+  "version": "25.12.19",
+  "license": "Apache 2.0",
+  "homepage": "https://google.github.io/flatbuffers/",
+  "project_urls": [
+    "Documentation, https://google.github.io/flatbuffers/",
+    "Source, https://github.com/google/flatbuffers"
+  ],
+  "license_files": [
+    "flatbuffers-25.12.19/LICENSE.upstream.txt"
+  ]
+}

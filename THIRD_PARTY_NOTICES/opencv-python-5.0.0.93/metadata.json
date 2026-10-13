@@ -1,0 +1,13 @@
+{
+  "name": "opencv-python",
+  "version": "5.0.0.93",
+  "license": "Apache 2.0",
+  "homepage": "https://github.com/opencv/opencv-python",
+  "project_urls": [],
+  "license_files": [
+    "opencv-python-5.0.0.93/cv2/LICENSE-3RD-PARTY.txt",
+    "opencv-python-5.0.0.93/cv2/LICENSE.txt",
+    "opencv-python-5.0.0.93/opencv_python-5.0.0.93.dist-info/LICENSE-3RD-PARTY.txt",
+    "opencv-python-5.0.0.93/opencv_python-5.0.0.93.dist-info/LICENSE.txt"
+  ]
+}

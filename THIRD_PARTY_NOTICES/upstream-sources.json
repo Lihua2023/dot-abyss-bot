@@ -1,0 +1,26 @@
+{
+  "flatbuffers": {
+    "url": "https://raw.githubusercontent.com/google/flatbuffers/v25.12.19/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "MouseInfo": {
+    "url": "https://raw.githubusercontent.com/asweigart/mouseinfo/master/LICENSE.txt",
+    "sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+  },
+  "PyGetWindow": {
+    "url": "https://raw.githubusercontent.com/asweigart/PyGetWindow/master/LICENSE.txt",
+    "sha256": "f8c2193c7e92df1a8335548a69653fa56b0ea3536586d93932f8c79c206df9fd"
+  },
+  "rapidocr-onnxruntime": {
+    "url": "https://raw.githubusercontent.com/RapidAI/RapidOCR/main/LICENSE",
+    "sha256": "3e0af25fdd06aa9586ae97adb00ea927ebe5a3805ac77d2d3a81ce5f55693333"
+  },
+  "Tcl 8.6.12": {
+    "url": "https://raw.githubusercontent.com/tcltk/tcl/core-8-6-12/license.terms",
+    "sha256": "c0a69a2bfd757361ec7e6143973b103c90409316b49e9c88db26ad6388e79f16"
+  },
+  "PaddleOCR models": {
+    "url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleOCR/main/LICENSE",
+    "sha256": "3840c5c0c61c294264d2dd77b8777be6ddd90121ef4e0e64abcd22edea581d6e"
+  }
+}

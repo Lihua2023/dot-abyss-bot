@@ -1,0 +1,30 @@
+{
+  "name": "setuptools",
+  "version": "84.0.0",
+  "license": "MIT",
+  "homepage": null,
+  "project_urls": [
+    "Source, https://github.com/pypa/setuptools",
+    "Documentation, https://setuptools.pypa.io/",
+    "Changelog, https://setuptools.pypa.io/en/stable/history.html"
+  ],
+  "license_files": [
+    "setuptools-84.0.0/setuptools-84.0.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.APACHE",
+    "setuptools-84.0.0/setuptools/_vendor/packaging-26.0.dist-info/licenses/LICENSE.BSD",
+    "setuptools-84.0.0/setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+    "setuptools-84.0.0/setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+    "setuptools-84.0.0/setuptools/config/NOTICE",
+    "setuptools-84.0.0/setuptools/config/_validate_pyproject/NOTICE"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "MouseInfo",
+  "version": "0.1.3",
+  "license": "GPLv3+",
+  "homepage": "https://github.com/asweigart/mouseinfo",
+  "project_urls": [],
+  "license_files": [
+    "MouseInfo-0.1.3/LICENSE.upstream.txt"
+  ]
+}

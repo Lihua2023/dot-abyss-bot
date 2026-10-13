@@ -1,0 +1,14 @@
+{
+  "name": "altgraph",
+  "version": "0.17.5",
+  "license": "MIT",
+  "homepage": "https://altgraph.readthedocs.io",
+  "project_urls": [
+    "Documentation, https://altgraph.readthedocs.io/en/latest/",
+    "Issue tracker, https://github.com/ronaldoussoren/altgraph/issues",
+    "Repository, https://github.com/ronaldoussoren/altgraph"
+  ],
+  "license_files": [
+    "altgraph-0.17.5/altgraph-0.17.5.dist-info/LICENSE"
+  ]
+}

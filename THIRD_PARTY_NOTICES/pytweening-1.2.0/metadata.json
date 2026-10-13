@@ -1,0 +1,11 @@
+{
+  "name": "pytweening",
+  "version": "1.2.0",
+  "license": "MIT",
+  "homepage": "https://github.com/asweigart/pytweening",
+  "project_urls": [],
+  "license_files": [
+    "pytweening-1.2.0/pytweening-1.2.0.dist-info/licenses/AUTHORS.txt",
+    "pytweening-1.2.0/pytweening-1.2.0.dist-info/licenses/LICENSE.txt"
+  ]
+}

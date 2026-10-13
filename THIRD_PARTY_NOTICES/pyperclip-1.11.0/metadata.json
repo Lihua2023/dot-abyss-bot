@@ -1,0 +1,13 @@
+{
+  "name": "pyperclip",
+  "version": "1.11.0",
+  "license": "BSD",
+  "homepage": null,
+  "project_urls": [
+    "Homepage, https://github.com/asweigart/pyperclip"
+  ],
+  "license_files": [
+    "pyperclip-1.11.0/pyperclip-1.11.0.dist-info/licenses/AUTHORS.txt",
+    "pyperclip-1.11.0/pyperclip-1.11.0.dist-info/licenses/LICENSE.txt"
+  ]
+}

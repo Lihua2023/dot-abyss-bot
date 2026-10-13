@@ -1,0 +1,10 @@
+{
+  "name": "pywin32-ctypes",
+  "version": "0.2.3",
+  "license": "BSD-3-Clause",
+  "homepage": "https://github.com/enthought/pywin32-ctypes",
+  "project_urls": [],
+  "license_files": [
+    "pywin32-ctypes-0.2.3/pywin32_ctypes-0.2.3.dist-info/LICENSE.txt"
+  ]
+}

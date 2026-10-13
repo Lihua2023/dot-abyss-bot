@@ -1,0 +1,10 @@
+{
+  "name": "six",
+  "version": "1.17.0",
+  "license": "MIT",
+  "homepage": "https://github.com/benjaminp/six",
+  "project_urls": [],
+  "license_files": [
+    "six-1.17.0/six-1.17.0.dist-info/LICENSE"
+  ]
+}

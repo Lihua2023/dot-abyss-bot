@@ -1,0 +1,11 @@
+{
+  "name": "onnxruntime",
+  "version": "1.31.0",
+  "license": "MIT License",
+  "homepage": "https://onnxruntime.ai",
+  "project_urls": [],
+  "license_files": [
+    "onnxruntime-1.31.0/onnxruntime/LICENSE",
+    "onnxruntime-1.31.0/onnxruntime/ThirdPartyNotices.txt"
+  ]
+}

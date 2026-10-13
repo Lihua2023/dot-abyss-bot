@@ -1,0 +1,11 @@
+{
+  "name": "PyAutoGUI",
+  "version": "0.9.54",
+  "license": "BSD",
+  "homepage": "https://github.com/asweigart/pyautogui",
+  "project_urls": [],
+  "license_files": [
+    "PyAutoGUI-0.9.54/pyautogui-0.9.54.dist-info/licenses/AUTHORS.txt",
+    "PyAutoGUI-0.9.54/pyautogui-0.9.54.dist-info/licenses/LICENSE.txt"
+  ]
+}

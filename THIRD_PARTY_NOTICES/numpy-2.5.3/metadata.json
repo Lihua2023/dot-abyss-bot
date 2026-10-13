@@ -1,0 +1,36 @@
+{
+  "name": "numpy",
+  "version": "2.5.3",
+  "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+  "homepage": null,
+  "project_urls": [
+    "homepage, https://numpy.org",
+    "documentation, https://numpy.org/doc/",
+    "source, https://github.com/numpy/numpy",
+    "download, https://pypi.org/project/numpy/#files",
+    "tracker, https://github.com/numpy/numpy/issues",
+    "release notes, https://numpy.org/doc/stable/release"
+  ],
+  "license_files": [
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/LICENSE.txt",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/ma/LICENSE",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+    "numpy-2.5.3/numpy-2.5.3.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+    "numpy-2.5.3/numpy/_core/include/numpy/random/LICENSE.txt",
+    "numpy-2.5.3/numpy/ma/LICENSE",
+    "numpy-2.5.3/numpy/random/LICENSE.md"
+  ]
+}

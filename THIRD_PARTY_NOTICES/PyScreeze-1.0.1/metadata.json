@@ -1,0 +1,11 @@
+{
+  "name": "PyScreeze",
+  "version": "1.0.1",
+  "license": "MIT",
+  "homepage": "https://github.com/asweigart/pyscreeze",
+  "project_urls": [],
+  "license_files": [
+    "PyScreeze-1.0.1/pyscreeze-1.0.1.dist-info/licenses/AUTHORS.txt",
+    "PyScreeze-1.0.1/pyscreeze-1.0.1.dist-info/licenses/LICENSE.txt"
+  ]
+}
