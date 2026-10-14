@@ -10,6 +10,8 @@ from datetime import datetime
 from pathlib import Path
 from tkinter import messagebox, ttk
 
+from PIL import Image, ImageTk
+
 from app_paths import FROZEN, RESOURCE_ROOT, data_root
 
 PYTHON = Path(sys.executable).with_name('python.exe')
@@ -64,6 +66,15 @@ class GreenFarmPanel:
         self.stop_button.pack(side='right')
         ttk.Separator(body).pack(fill='x', pady=(12, 12))
         ttk.Label(body, textvariable=self.status, wraplength=530, foreground='#333333').pack(anchor='w')
+        preview_path = RESOURCE_ROOT / 'assets' / 'green_ui' / '宝箱关卡列表.png'
+        if preview_path.exists():
+            with Image.open(preview_path) as source:
+                chest = source.crop((1230, 285, 1620, 575))
+                chest.thumbnail((330, 245), Image.Resampling.LANCZOS)
+                self.chest_preview = ImageTk.PhotoImage(chest, master=self.root)
+            ttk.Label(body, image=self.chest_preview).pack(pady=(24, 5))
+            ttk.Label(body, text='宝箱关卡图标参考；实际请选择掉落列表含森林披风的第五层宝箱房。',
+                      wraplength=530, foreground='#555555').pack()
 
     def valid_options(self):
         try:
