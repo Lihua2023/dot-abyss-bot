@@ -14,6 +14,11 @@ from version import VERSION
 
 
 def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+    if argv and argv[0] == 'green-run':
+        from green_farm import main as green_main
+        return green_main(argv[1:]) or 0
     parser = argparse.ArgumentParser(description='Dot Abyss 本地识图脚本；F7 暂停，F12 停止。')
     parser.add_argument('--version', action='version', version=VERSION)
     parser.add_argument('--data-dir', type=Path, help='自定义配置、账本和日志目录')

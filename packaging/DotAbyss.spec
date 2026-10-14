@@ -4,7 +4,7 @@ from PyInstaller.utils.hooks import collect_data_files, collect_dynamic_libs, co
 root = Path(SPECPATH).parent
 datas = collect_data_files('rapidocr_onnxruntime')
 binaries = collect_dynamic_libs('onnxruntime')
-hidden = collect_submodules('rapidocr_onnxruntime') + ['pyautogui', 'PIL.ImageGrab']
+hidden = collect_submodules('rapidocr_onnxruntime') + ['pyautogui', 'PIL.ImageGrab', 'green_farm', 'green_loot', 'green_farm_policy']
 a = Analysis([str(root/'app.py')], pathex=[str(root)], binaries=binaries,
              datas=datas, hiddenimports=hidden, hookspath=[], runtime_hooks=[],
              excludes=['pytest', 'IPython', 'matplotlib', 'pandas', 'scipy'],

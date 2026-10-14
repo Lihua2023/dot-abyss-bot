@@ -55,7 +55,7 @@ def main():
             shutil.copyfile(file, release_dir/file.name)
     shutil.copytree(ROOT/'assets', release_dir/'assets')
     shutil.copytree(ROOT/'THIRD_PARTY_NOTICES', release_dir/'THIRD_PARTY_NOTICES')
-    for name in ('config.default.json', 'LICENSE', 'CHANGELOG.md'):
+    for name in ('config.default.json', 'LICENSE', 'CHANGELOG.md', '刷绿衣前必看.md'):
         shutil.copyfile(ROOT/name, release_dir/name)
     shutil.copyfile(ROOT/'release/README-用户版.md', release_dir/'README-用户版.md')
     shutil.copyfile(ROOT/'release/使用前先阅读.txt', release_dir/'使用前先阅读.txt')
@@ -114,6 +114,7 @@ def main():
     source_dir = output/f'DotAbyss-{VERSION}-source'
     source_dir.mkdir()
     source_files = ['app.py','app_paths.py','app_runtime.py','abyss_bot.py','launcher.py',
+                    'green_farm.py','green_farm_panel.py','green_farm_entry.pyw','green_farm_policy.py','green_loot.py','刷绿衣前必看.md',
                     'farm_policy.py','environment_check.py','release_smoke.py','version.py',
                     'verify_offline.py','verify_packaging.py','build_templates.py',
                     'requirements.txt','requirements-win-x64.lock','requirements-build-win-x64.lock',
@@ -123,6 +124,9 @@ def main():
         shutil.copyfile(ROOT/name, source_dir/name)
     for name in ('assets', 'packaging', 'scripts', 'release', 'THIRD_PARTY_NOTICES'):
         shutil.copytree(ROOT/name, source_dir/name, ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+    (source_dir/'docs').mkdir()
+    for name in ('green-farm-live.md', 'green-loot-detector.md'):
+        shutil.copyfile(ROOT/'docs'/name, source_dir/'docs'/name)
     shutil.copyfile(release_dir/'release.json', source_dir/'release.json')
     source_zip=output/(source_dir.name+'.zip')
     archive_folder(source_dir, source_zip)

@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from farm_policy import COLOR_NAMES, ROUTE_NAMES, normalize_route_priority
 from app_paths import RESOURCE_ROOT as ROOT, default_config_path, load_config
+from green_farm_panel import GreenFarmPanel
 
 MODES={'按颜色优先级':'color_priority','最左代码（最快）':'leftmost'}
 
@@ -40,12 +41,19 @@ def main(argv=None):
     config=load_config(args.config)
     root=tk.Tk()
     root.title('像素深渊 · 开刷设置')
-    root.geometry('610x710')
+    root.geometry('650x760')
     root.resizable(False,False)
     style=ttk.Style(root)
     style.configure('TLabel',font=('Microsoft YaHei UI',10))
     style.configure('TButton',font=('Microsoft YaHei UI',10))
-    frame=ttk.Frame(root,padding=22)
+    pages=ttk.Notebook(root)
+    pages.pack(fill='both',expand=True)
+    abyss_page=ttk.Frame(pages)
+    green_page=ttk.Frame(pages)
+    pages.add(abyss_page,text='深渊')
+    pages.add(green_page,text='绿衣')
+    green_panel=GreenFarmPanel(root,green_page,parent_owns_lock=True)
+    frame=ttk.Frame(abyss_page,padding=22)
     frame.pack(fill='both',expand=True)
     ttk.Label(frame,text='开刷前设置',font=('Microsoft YaHei UI',18,'bold')).pack(anchor='w')
     ttk.Label(frame,text='优先级从上到下；选中一项后用 ↑ ↓ 调整。').pack(anchor='w',pady=(8,14))
@@ -85,6 +93,9 @@ def main(argv=None):
     ttk.Label(frame,text='开始后8秒内切回游戏。F7暂停，F12停止。').pack(anchor='w')
     selected=[]
     def save(start):
+        if start and green_panel.process and green_panel.process.poll() is None:
+            messagebox.showerror('无法启动','绿衣脚本仍在运行，请先停止。',parent=root)
+            return
         try:
             reverse_colors={v:k for k,v in COLOR_NAMES.items()}
             reverse_routes={v:k for k,v in ROUTE_NAMES.items()}
@@ -102,6 +113,9 @@ def main(argv=None):
     buttons=ttk.Frame(frame);buttons.pack(fill='x',pady=14)
     ttk.Button(buttons,text='保存设置',command=lambda:save(False)).pack(side='left')
     ttk.Button(buttons,text='保存并开始刷取',command=lambda:save(True)).pack(side='right')
+    def on_close():
+        if green_panel.close_requested(): root.destroy()
+    root.protocol('WM_DELETE_WINDOW',on_close)
     root.mainloop()
     if selected:
         from abyss_bot import main as run
