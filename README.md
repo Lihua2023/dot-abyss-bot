@@ -1,6 +1,6 @@
-# DOT ABYSS BOT 0.2.1
+# DOT ABYSS BOT 0.2.0
 
-[下载 Windows 程序包](https://github.com/Lihua2023/dot-abyss-bot/releases/download/v0.2.1/DotAbyss-0.2.1-win-x64.zip) · [版本说明与全部文件](https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.2.1)
+[下载 Windows 程序包](https://github.com/Lihua2023/dot-abyss-bot/releases/download/v0.2.0/DotAbyss-0.2.0-win-x64.zip) · [版本说明与全部文件](https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.2.0)
 
 免费分享，仅限非商业用途。完整解压后阅读“使用前先阅读.txt”，双击“启动.cmd”。设置窗口有「深渊」「绿衣」两页；刷绿衣前请另读 [刷绿衣前必看](刷绿衣前必看.md)。“自检.cmd”是可选排错工具，不需要每次运行。
 
@@ -57,7 +57,7 @@
 
 ## 历史版本
 
-0.1.1 是只调整发布说明与包内文件的深渊版；0.2.0 增加了独立配置的绿衣页；0.2.1 放大两页标签，加入宝箱关卡图标参考，并明确起始关卡与视频链接。深渊页原有路线与层数配置逻辑保持不变。
+0.1.1 是只调整发布说明与包内文件的深渊版；0.2.0 增加了独立配置的绿衣页、宝箱关卡图标参考及开刷前说明。深渊页原有路线与层数配置逻辑保持不变。
 
 ## 源码与许可
 

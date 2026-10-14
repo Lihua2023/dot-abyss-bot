@@ -1,4 +1,4 @@
-Dot Abyss 0.2.1 —— 使用前先阅读
+Dot Abyss 0.2.0 —— 使用前先阅读
 
 完整解压 ZIP，保留整个文件夹。双击“启动.cmd”，在窗口上方选择“深渊”或“绿衣”；“自检.cmd”只供排错，不需每次运行。
 
@@ -14,4 +14,4 @@ Dot Abyss 0.2.1 —— 使用前先阅读
 
 免费分享，仅限个人非商业使用，禁止收费销售和付费代刷。详见 LICENSE。
 
-项目与下载：https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.2.1
+项目与下载：https://github.com/Lihua2023/dot-abyss-bot/releases/tag/v0.2.0
