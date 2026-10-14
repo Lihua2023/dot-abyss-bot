@@ -4,6 +4,7 @@ import argparse
 import hashlib
 from importlib import metadata
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -39,11 +40,12 @@ def archive_folder(folder, target):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--skip-replay',action='store_true')
+    parser.add_argument('--output-dir',type=Path,help='将发行文件写入单独目录，便于保留已发布版本')
     args=parser.parse_args()
     built = ROOT/'dist/DotAbyss'
     if not (built/'DotAbyss.exe').exists():
         raise RuntimeError('Build the EXE first')
-    output = ROOT/'release-output'
+    output = (args.output_dir or Path(os.environ.get('DOTABYSS_RELEASE_OUTPUT', ROOT/'release-output'))).resolve()
     output.mkdir(exist_ok=True)
     # Never replace a prior release directory silently.
     release_dir = output/f'DotAbyss-{VERSION}-win-x64'
