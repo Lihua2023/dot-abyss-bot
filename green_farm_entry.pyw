@@ -3,11 +3,12 @@ import tkinter as tk
 from tkinter import ttk
 
 from green_farm_panel import GreenFarmPanel
+from version import VERSION
 
 
 def main():
     root = tk.Tk()
-    root.title('绿衣刷取 · 深度 10')
+    root.title(f'绿衣刷取 · 深度 10 ({VERSION})')
     root.geometry('610x530')
     root.resizable(False, False)
     page = ttk.Frame(root)

@@ -119,6 +119,62 @@ class PackagingTests(unittest.TestCase):
             run.assert_called_once_with(['--config', str(path), '--run', '--delay', '8'])
         self.assertEqual(app_paths.load_config(path)['max_rounds'], 1)
 
+    def test_green_farm_recognizes_zh_and_resized_quest_and_list_screens(self):
+        import cv2
+        import numpy as np
+        import green_farm
+        ui = app_paths.RESOURCE_ROOT / 'assets' / 'green_ui'
+        ref_quest = cv2.imdecode(np.fromfile(str(ui / '刷绿衣起始界面.png'), dtype=np.uint8), cv2.IMREAD_COLOR)
+        obs_q = green_farm.observe_frame(ref_quest)
+        self.assertEqual(obs_q['state'], 'quest')
+        # Simulate a 1282x752 window with 32px title bar + 1280x720 client area and Chinese quest title
+        zh_quest = ref_quest.copy()
+        qt_zh = green_farm.TEMPLATES['quest_title_zh']
+        zh_quest[78:78 + qt_zh.shape[0], 846:846 + qt_zh.shape[1]] = qt_zh
+        pad = np.zeros((39, 1919, 3), dtype=np.uint8)
+        top_32 = cv2.resize(zh_quest[:38, :], (1282, 32), interpolation=cv2.INTER_AREA)
+        client_720 = cv2.resize(np.vstack([zh_quest[38:, :], pad]), (1282, 720), interpolation=cv2.INTER_AREA)
+        win_720 = np.vstack([top_32, client_720])
+        obs_720 = green_farm.observe_frame(win_720)
+        self.assertEqual(obs_720['state'], 'quest')
+        self.assertGreater(obs_720['quest_title_score'], 0.85)
+        self.assertGreater(obs_720['sortie_score'], 0.85)
+        cx, cy = green_farm._locate_close_loot(obs_q['frame'])
+        self.assertTrue(1740 <= cx <= 1915 and 55 <= cy <= 135)
+        for btn_name, (jx, jy) in green_farm.JITTER_RANGES.items():
+            base = green_farm.POINTS.get(btn_name, (960, 580))
+            for _ in range(25):
+                px, py = green_farm._jitter_point(btn_name, base)
+                self.assertLessEqual(abs(px - base[0]), jx)
+                self.assertLessEqual(abs(py - base[1]), jy)
+
+    def test_green_loot_scrollbar_and_scrolled_column_detection(self):
+        import numpy as np
+        import green_loot
+        frame = np.zeros((1079, 1919, 3), dtype=np.uint8)
+        header = green_loot._read(green_loot.ASSET_DIR / 'panel_header.png')
+        label = green_loot._read(green_loot.ASSET_DIR / 'panel_label.png')
+        coat = green_loot._read(green_loot.ASSET_DIR / 'green_coat.png')
+        frame[65:65 + header.shape[0], 850:850 + header.shape[1]] = header
+        frame[150:150 + label.shape[0], 850:850 + label.shape[1]] = label
+        obs_no_sb = green_loot.inspect(frame)
+        self.assertEqual(obs_no_sb.status, 'absent_visible')
+        self.assertFalse(obs_no_sb.has_scrollbar)
+        self.assertFalse(obs_no_sb.can_scroll_down)
+        # Add a scrollbar thumb at the top (y=236..850) -> can_scroll_down=True
+        frame[236:850, 1760:1767] = 210
+        obs_top = green_loot.inspect(frame)
+        self.assertTrue(obs_top.has_scrollbar)
+        self.assertTrue(obs_top.can_scroll_down)
+        # Simulate scrolling to bottom (y=420..1040) with green_coat at non-aligned scrolled y=635
+        frame[236:1045, 1760:1767] = 32
+        frame[420:1040, 1760:1767] = 210
+        ch, cw = coat.shape[:2]
+        frame[635:635 + ch, 575:575 + cw] = coat
+        obs_bot = green_loot.inspect(frame)
+        self.assertEqual(obs_bot.status, 'found')
+        self.assertTrue(obs_bot.has_scrollbar)
+        self.assertFalse(obs_bot.can_scroll_down)
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

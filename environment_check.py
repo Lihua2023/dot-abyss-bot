@@ -15,7 +15,7 @@ def main():
             'screenshots_uploaded':False,'checks':{}}
     problems=[]
     if platform.system()!='Windows':problems.append('仅支持Windows客户端')
-    if sys.version_info[:2]!=(3,12) or struct.calcsize('P')!=8:problems.append('需要Python 3.12 x64')
+    if sys.version_info[:2] not in ((3,12),(3,13),(3,14)) or struct.calcsize('P')!=8:problems.append('需要Python 3.12+ x64')
     try:
         from abyss_bot import Vision, GameWindow, supported_window_ratio
         config=load_config(default_config_path())

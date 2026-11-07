@@ -1020,9 +1020,26 @@ class GameWindow:
         import pyautogui
         pyautogui.FAILSAFE=True
         l,t,r,b=self.rect
+        wheel_delta=int(delta*120) if 0<abs(delta)<40 else int(delta)
         try:
             pyautogui.moveTo(l+point[0]*(r-l)/BASE[0],t+point[1]*(b-t)/BASE[1])
-            pyautogui.scroll(delta)
+            pyautogui.scroll(wheel_delta)
+        except pyautogui.FailSafeException as exc:
+            raise RuntimeError('鼠标角落紧急停止') from exc
+
+    def drag(self,start_point,end_point,duration=.25):
+        if stop_requested():
+            raise RuntimeError('F12人工停止')
+        if self.user32.GetForegroundWindow()!=self.hwnd or self.bounds()!=self.rect:
+            raise RuntimeError('拖拽前窗口或焦点发生变化')
+        import pyautogui
+        pyautogui.FAILSAFE=True
+        l,t,r,b=self.rect
+        sx,sy=l+start_point[0]*(r-l)/BASE[0],t+start_point[1]*(b-t)/BASE[1]
+        ex,ey=l+end_point[0]*(r-l)/BASE[0],t+end_point[1]*(b-t)/BASE[1]
+        try:
+            pyautogui.moveTo(sx,sy)
+            pyautogui.dragTo(ex,ey,duration=duration,button='left')
         except pyautogui.FailSafeException as exc:
             raise RuntimeError('鼠标角落紧急停止') from exc
 
