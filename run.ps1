@@ -5,8 +5,11 @@ $releasePython = Join-Path $PSScriptRoot '.venv-release\Scripts\python.exe'
 if (Test-Path -LiteralPath $releasePython) {
     $runnerPython = $releasePython
 } elseif (Get-Command py -ErrorAction SilentlyContinue) {
-    $runnerPython = (py -3.12 -c 'import sys;print(sys.executable)').Trim()
-    if ($LASTEXITCODE) { throw 'Please install Python 3.12 x64 with Tcl/Tk' }
+    $runnerPython = (py -3.14 -c 'import sys;print(sys.executable)' 2>$null).Trim()
+    if ($LASTEXITCODE -or -not $runnerPython) {
+        $runnerPython = (py -3.12 -c 'import sys;print(sys.executable)' 2>$null).Trim()
+    }
+    if ($LASTEXITCODE -or -not $runnerPython) { throw 'Please install Python 3.14 or 3.12 x64 with Tcl/Tk' }
 } else {
     $runnerPython = (Get-Command python -ErrorAction Stop).Source
 }

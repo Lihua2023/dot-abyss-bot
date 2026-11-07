@@ -13,6 +13,7 @@ from tkinter import messagebox, ttk
 from PIL import Image, ImageTk
 
 from app_paths import FROZEN, RESOURCE_ROOT, data_root
+from version import VERSION
 
 PYTHON = Path(sys.executable).with_name('python.exe')
 SCRIPT = RESOURCE_ROOT / 'green_farm.py'
@@ -40,7 +41,7 @@ class GreenFarmPanel:
     def build(self):
         body = ttk.Frame(self.parent, padding=22)
         body.pack(fill='both', expand=True)
-        ttk.Label(body, text='绿衣刷取 · 探索深度 10', font=('Microsoft YaHei UI', 18, 'bold')).pack(anchor='w')
+        ttk.Label(body, text=f'绿衣刷取 · 探索深度 10  [{VERSION}]', font=('Microsoft YaHei UI', 18, 'bold')).pack(anchor='w')
         ttk.Label(body, text='点开始后 8 秒内切回游戏。F12 可随时停止。').pack(anchor='w', pady=(8, 18))
         options = ttk.Frame(body); options.pack(fill='x')
         ttk.Label(options, text='最多失败重试').grid(row=0, column=0, sticky='w')
@@ -70,9 +71,9 @@ class GreenFarmPanel:
         if preview_path.exists():
             with Image.open(preview_path) as source:
                 chest = source.crop((1230, 285, 1620, 575))
-                chest.thumbnail((330, 245), Image.Resampling.LANCZOS)
+                chest.thumbnail((310, 225), Image.Resampling.LANCZOS)
                 self.chest_preview = ImageTk.PhotoImage(chest, master=self.root)
-            ttk.Label(body, image=self.chest_preview).pack(pady=(24, 5))
+            ttk.Label(body, image=self.chest_preview).pack(pady=(16, 4))
             ttk.Label(body, text='宝箱关卡图标参考；实际请选择掉落列表含森林披风的第五层宝箱房。',
                       wraplength=530, foreground='#555555').pack()
 

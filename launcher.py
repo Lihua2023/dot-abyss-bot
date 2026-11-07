@@ -8,6 +8,7 @@ from tkinter import ttk, messagebox
 from farm_policy import COLOR_NAMES, ROUTE_NAMES, normalize_route_priority
 from app_paths import RESOURCE_ROOT as ROOT, default_config_path, load_config
 from green_farm_panel import GreenFarmPanel
+from version import VERSION
 
 MODES={'按颜色优先级':'color_priority','最左代码（最快）':'leftmost'}
 
@@ -40,8 +41,8 @@ def main(argv=None):
     args=parser.parse_args(argv)
     config=load_config(args.config)
     root=tk.Tk()
-    root.title('像素深渊 · 开刷设置')
-    root.geometry('650x790')
+    root.title(f'像素深渊 · 开刷设置 ({VERSION})')
+    root.geometry('650x830')
     root.resizable(False,False)
     style=ttk.Style(root)
     style.configure('TLabel',font=('Microsoft YaHei UI',10))

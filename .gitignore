@@ -15,3 +15,9 @@ dist/
 release-staging/
 config.*.json
 !config.default.json
+*.log
+*.stop
+accounts/
+ledger.json
+green_farm_settings.json
+dot-abyss-bot-copy/

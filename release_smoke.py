@@ -18,7 +18,7 @@ def main(report_path=None, gui_check=False):
     from farm_policy import CATEGORIES, ROUTE_NAMES
     from version import VERSION
     require(platform.system()=='Windows', '仅支持 Windows')
-    require(sys.version_info[:2]==(3,12), '需要 Python 3.12')
+    require(sys.version_info[:2] in ((3,12),(3,13),(3,14)), '需要 Python 3.12+')
     require(struct.calcsize('P')==8, '需要64位 Python')
     tcl_version=tk.Tcl().eval('info patchlevel')
     if gui_check:

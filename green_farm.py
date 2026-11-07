@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import sys
 import time
 from dataclasses import asdict
@@ -31,32 +32,83 @@ POINTS={
     'fc':(1600,870), 'fc_confirm':(960,540), 'retry':(1580,1018),
     'auto':(1440,1051),
 }
+JITTER_RANGES={
+    'sortie':(35,12), 'quest_start':(25,10), 'chest':(18,10),
+    'close_loot':(8,8), 'fc':(12,10), 'fc_confirm':(45,30),
+    'retry':(28,14), 'auto':(22,6), 'loot_scroll':(80,60),
+}
+
+
+def _jitter_point(name,point):
+    bx,by=point
+    jx,jy=JITTER_RANGES.get(name,(6,6))
+    dx=random.randint(-jx,jx) if jx>0 else 0
+    dy=random.randint(-jy,jy) if jy>0 else 0
+    return (max(8,min(SIZE[0]-8,int(bx)+dx)),max(8,min(SIZE[1]-8,int(by)+dy)))
 TEMPLATES={name:cv2.imdecode(np.fromfile(str(ASSETS/f'{name}.png'),dtype=np.uint8),cv2.IMREAD_COLOR)
            for name in ('battle_title','chest_button','zero_digit','failed_title','retry_button',
-                        'quest_title','sortie_button','aim_cancel')}
+                        'quest_title','sortie_button','aim_cancel',
+                        'quest_title_zh','battle_title_zh','battle_title_suffix',
+                        'explore_header','quest_start_button')}
 TEMPLATES['quest_clear']=cv2.resize(
     cv2.imdecode(np.fromfile(str(RESOURCE_ROOT/'assets'/'templates'/'quest_clear.png'),dtype=np.uint8),cv2.IMREAD_COLOR),
     None,fx=1919/1470,fy=1919/1470,interpolation=cv2.INTER_NEAREST)
+_AIM_MASK=np.ones(TEMPLATES['aim_cancel'].shape[:2],dtype=np.uint8)
+_AIM_MASK[36:112,75:245]=0
+_AIM_MASK3=cv2.merge([_AIM_MASK,_AIM_MASK,_AIM_MASK])
 
 
-def score(frame,name,box):
+def score(frame,name,box,scales=(1.0,)):
     x1,y1,x2,y2=box
     area=frame[y1:y2,x1:x2]
     template=TEMPLATES[name]
-    if area.shape[0]<template.shape[0] or area.shape[1]<template.shape[1]: return 0.0
-    return float(cv2.matchTemplate(area,template,cv2.TM_CCOEFF_NORMED).max())
+    best=0.0
+    for s in scales:
+        t=template if s==1.0 else cv2.resize(template,None,fx=s,fy=s,interpolation=cv2.INTER_AREA if s<1 else cv2.INTER_LINEAR)
+        if area.shape[0]<t.shape[0] or area.shape[1]<t.shape[1]: continue
+        val=float(cv2.matchTemplate(area,t,cv2.TM_CCOEFF_NORMED).max())
+        if val>best: best=val
+    return best
 
 
-def locate(frame,name,box):
+def locate(frame,name,box,scales=(1.0,)):
     x1,y1,x2,y2=box
+    area=frame[y1:y2,x1:x2]
     template=TEMPLATES[name]
-    result=cv2.matchTemplate(frame[y1:y2,x1:x2],template,cv2.TM_CCOEFF_NORMED)
-    _,value,_,(x,y)=cv2.minMaxLoc(result)
-    return float(value),(x1+x+template.shape[1]//2,y1+y+template.shape[0]//2)
+    best=(-1.0,(x1,y1))
+    for s in scales:
+        t=template if s==1.0 else cv2.resize(template,None,fx=s,fy=s,interpolation=cv2.INTER_AREA if s<1 else cv2.INTER_LINEAR)
+        if area.shape[0]<t.shape[0] or area.shape[1]<t.shape[1]: continue
+        result=cv2.matchTemplate(area,t,cv2.TM_CCOEFF_NORMED)
+        _,value,_,(x,y)=cv2.minMaxLoc(result)
+        if value>best[0]:
+            best=(float(value),(x1+x+t.shape[1]//2,y1+y+t.shape[0]//2))
+    return best
+
+
+def _detect_titlebar_height(image):
+    h,w=image.shape[:2]
+    if h<50 or w<400: return 0
+    mid=image[:45,int(w*0.15):int(w*0.80),:]
+    row_std=mid.std(axis=(1,2))
+    row_diff=np.abs(np.diff(mid.mean(axis=(1,2))))
+    for y in range(20,min(42,h-1)):
+        if row_std[y]<12.0 and (row_diff[y]>8.0 or row_std[y+1]>15.0):
+            return y+1
+    client_w=w-2 if (w-2)%16==0 else w
+    tb_geom=h-round(client_w*9/16)-(1 if (w-2)%16==0 else 0)
+    if 20<=tb_geom<=42:
+        return tb_geom
+    return 0
 
 
 def normalized(image):
     h,w=image.shape[:2]
+    tb=_detect_titlebar_height(image)
+    if tb>0 and abs(w/max(1,h-tb)-(16.0/9.0))<0.05 and h-tb>=700:
+        top_bar=cv2.resize(image[:tb,:],(SIZE[0],38),interpolation=cv2.INTER_AREA)
+        client_1080=cv2.resize(image[tb:,:],(SIZE[0],1080),interpolation=cv2.INTER_AREA)
+        return np.vstack([top_bar,client_1080])[:SIZE[1],:SIZE[0]].copy()
     # The live game can extend 40 px below the desktop while its 1919×1079
     # visible content stays at the top-left, matching the supplied screenshots.
     if 1919<=w<=1930 and 1079<=h<=1130:
@@ -90,25 +142,50 @@ def auto_enabled(frame):
     return None
 
 
+def _locate_close_loot(frame):
+    hsv=cv2.cvtColor(frame[55:135,1740:1915],cv2.COLOR_BGR2HSV)
+    ys,xs=np.where((hsv[:,:,0]>=80)&(hsv[:,:,0]<=110)&(hsv[:,:,1]>120)&(hsv[:,:,2]>180))
+    if len(xs)>=20:
+        return (int(round(xs.mean()))+1740,int(round(ys.mean()))+55)
+    return POINTS['close_loot']
+
+
 def observe_frame(image):
     f=normalized(image)
-    fail_title=score(f,'failed_title',(25,60,510,150))
-    retry_score,retry_center=locate(f,'retry_button',(1450,900,1705,1075))
+    scales=(0.95,1.0,1.05)
+    fail_title=score(f,'failed_title',(25,50,520,160),scales)
+    retry_score,retry_center=locate(f,'retry_button',(1440,890,1715,1075),scales)
     if fail_title>.82 and retry_score>.78:
         return {'state':'failed','frame':f,'retry_center':retry_center}
-    if score(f,'quest_clear',(15,45,650,230))>.86:
+    if score(f,'quest_clear',(15,40,660,240),scales)>.86:
         return {'state':'won','frame':f}
-    quest_title=score(f,'quest_title',(830,65,1100,140))
-    sortie_score,sortie_center=locate(f,'sortie_button',(1090,890,1450,1070))
+    quest_title=max(
+        score(f,'quest_title',(820,55,1110,145),scales),
+        score(f,'quest_title_zh',(820,55,1110,145),scales),
+    )
+    sortie_score,sortie_center=locate(f,'sortie_button',(1080,880,1460,1075),scales)
     if quest_title>.78 and sortie_score>.78:
-        return {'state':'quest','frame':f,'sortie_center':sortie_center}
+        return {'state':'quest','frame':f,'sortie_center':sortie_center,
+                'quest_title_score':round(quest_title,3),'sortie_score':round(sortie_score,3)}
     loot=inspect_loot(f)
     if loot.panel_header_score>.82 and loot.panel_label_score>.82:
         return {'state':'loot','frame':f,'loot':loot}
-    if score(f,'aim_cancel',(1535,875,1880,1069))>.78:
+    aim_score=score(f,'aim_cancel',(1535,875,1880,1069),scales)
+    if aim_score<=.78:
+        aim_area=f[875:1069,1535:1880]
+        t_aim=TEMPLATES['aim_cancel']
+        if aim_area.shape[0]>=t_aim.shape[0] and aim_area.shape[1]>=t_aim.shape[1]:
+            masked_val=float(cv2.matchTemplate(aim_area,t_aim,cv2.TM_CCOEFF_NORMED,mask=_AIM_MASK3).max())
+            if masked_val>.86:
+                aim_score=masked_val
+    if aim_score>.78:
         return {'state':'aim','frame':f}
-    battle=score(f,'battle_title',(25,55,480,125))
-    chest=score(f,'chest_button',(1570,50,1750,145))
+    battle=max(
+        score(f,'battle_title',(20,45,490,130),scales),
+        score(f,'battle_title_zh',(20,45,490,130),scales),
+        score(f,'battle_title_suffix',(200,45,490,130),scales),
+    )
+    chest=score(f,'chest_button',(1560,45,1760,150),scales)
     if battle>.78 and chest>.75:
         z=score(f,'zero_digit',(1687,78,1731,116))
         count=0 if z>.9 else (1 if z<.83 else None)
@@ -119,6 +196,23 @@ def observe_frame(image):
         return {'state':'battle','frame':f,'loot_count':count,'zero_score':round(z,3),
                 'energy':power,'segments':segments,'fc_ready':power>=4 and bright>.20,
                 'fc_brightness':round(bright,3),'auto_enabled':auto_enabled(f)}
+    explore_score=score(f,'explore_header',(130,50,330,135),scales)
+    start_score,start_center=locate(f,'quest_start_button',(30,780,1850,900),scales)
+    if explore_score>.78 and start_score>.78:
+        card_jp,card_jp_pt=locate(f,'battle_title',(20,585,1900,655),scales)
+        card_zh,card_zh_pt=locate(f,'battle_title_zh',(20,585,1900,655),scales)
+        card_score,card_pt=(card_zh,card_zh_pt) if card_zh>=card_jp else (card_jp,card_jp_pt)
+        target_start=None
+        if card_score>.72:
+            bx1=max(20,card_pt[0]-220);bx2=min(1900,card_pt[0]+220)
+            exp_glyph=TEMPLATES['battle_title_suffix'][12:42,8:62]
+            exp_area=f[590:650,bx1:bx2]
+            exp_sc=float(cv2.matchTemplate(exp_area,exp_glyph,cv2.TM_CCOEFF_NORMED).max()) if exp_area.shape[1]>=exp_glyph.shape[1] else 0.0
+            btn_sc,btn_pt=locate(f,'quest_start_button',(bx1,780,bx2,900),scales)
+            if exp_sc>.84 and btn_sc>.75:
+                target_start=btn_pt
+        return {'state':'quest_list','frame':f,'start_center':target_start or start_center,
+                'card_matched':target_start is not None,'card_score':round(card_score,3)}
     return {'state':'unknown','frame':f,'battle_score':round(battle,3),'chest_score':round(chest,3)}
 
 
@@ -136,6 +230,9 @@ class Runner:
         self.last_state=None
         self.state_since=time.monotonic()
         self.panel_first=None
+        self.loot_scrolls=0
+        self.last_thumb_bottom=None
+        self.last_close_loot_at=None
         self.unknown_since=None
         self.last_log=None
         self.auto_seen_since=None
@@ -143,6 +240,12 @@ class Runner:
         self.last_auto_click_at=None
         self.auto_unknown_since=None
         self.raw_size=None
+
+    def _reset_battle_state(self):
+        self.panel_first=None
+        self.loot_scrolls=0
+        self.last_thumb_bottom=None
+        self.last_close_loot_at=None
 
     def ensure_auto(self, enabled, desired, now):
         """Toggle only after a stable observation and verify the next frame."""
@@ -179,7 +282,7 @@ class Runner:
 
     def capture(self):
         image=self.win.capture()
-        self.raw_size=(image.shape[1],image.shape[0])
+        self.raw_size=(image.shape[1],image.shape[0],_detect_titlebar_height(image))
         obs=observe_frame(image)
         state=obs['state']
         if state!=self.last_state:
@@ -188,15 +291,42 @@ class Runner:
             self.shot(state,image)
         return image,obs
 
+    def _to_win_point(self,x,y):
+        w,h,tb=self.raw_size if len(self.raw_size)==3 else (*self.raw_size,0)
+        if tb>0 and abs(w/max(1,h-tb)-(16.0/9.0))<0.05 and h-tb>=700:
+            raw_x=x*w/SIZE[0]
+            raw_y=(y*tb/38.0) if y<38 else (tb+(y-38)*(h-tb)/1080.0)
+            return (raw_x*1470/w,raw_y*864/h)
+        elif 1919<=w<=1930 and 1079<=h<=1130:
+            return (x*1470/w,y*864/h)
+        else:
+            return (x*1470/SIZE[0],y*864/SIZE[1])
+
     def click(self,name,point=None):
         if self.stopped_by_user(): raise RuntimeError('用户停止')
-        x,y=point or POINTS[name]
-        self.log('click',button=name,point=(x,y))
-        w,h=self.raw_size
-        if 1919<=w<=1930 and 1079<=h<=1130:
-            self.win.click((x*1470/w,y*864/h))
-        else:
-            self.win.click((x*1470/SIZE[0],y*864/SIZE[1]))
+        base_pt=point or POINTS[name]
+        x,y=_jitter_point(name,base_pt)
+        self.log('click',button=name,point=(x,y),base_point=tuple(base_pt))
+        self.win.click(self._to_win_point(x,y))
+
+    def scroll_loot(self,lo):
+        if self.stopped_by_user(): raise RuntimeError('用户停止')
+        sx,sy=_jitter_point('loot_scroll',(960,580))
+        win_pt=self._to_win_point(sx,sy)
+        wheel_stuck=(self.loot_scrolls>=1 and self.last_thumb_bottom is not None
+                     and lo.thumb_bottom is not None and lo.thumb_bottom-self.last_thumb_bottom<25)
+        for _ in range(6):
+            self.win.scroll(win_pt,-120)
+            time.sleep(0.03)
+        if wheel_stuck and lo.thumb_top is not None and lo.thumb_bottom is not None:
+            ty=max(240,min(940,(lo.thumb_top+lo.thumb_bottom)//2))
+            start_pt=self._to_win_point(1763+random.randint(-2,2),ty)
+            end_pt=self._to_win_point(1763+random.randint(-2,2),985+random.randint(-8,8))
+            self.win.drag(start_pt,end_pt,duration=0.25)
+        self.last_thumb_bottom=lo.thumb_bottom
+        self.log('loot_scroll',page=self.loot_scrolls+1,point=(sx,sy),
+                 thumb_top=lo.thumb_top,thumb_bottom=lo.thumb_bottom,drag_fallback=wheel_stuck)
+        time.sleep(0.35)
 
     def cast(self):
         self.click('fc')
@@ -225,16 +355,34 @@ class Runner:
             return
         if obs['state']=='quest':
             self.click('sortie',obs['sortie_center'])
+            self._reset_battle_state()
             self.started=time.monotonic()
+        elif obs['state']=='quest_list' and obs.get('card_matched'):
+            self.log('quest_list_enter',point=obs['start_center'],card_score=obs.get('card_score'))
+            self.click('quest_start',obs['start_center'])
+            for _ in range(15):
+                if self.stopped_by_user(): raise RuntimeError('用户停止')
+                time.sleep(0.5)
+                image,obs=self.capture()
+                if obs['state']=='quest':
+                    self.click('sortie',obs['sortie_center'])
+                    self._reset_battle_state()
+                    self.started=time.monotonic()
+                    break
+            else:
+                raise RuntimeError('从探索任务列表点击开始后未进入任务详情页')
         elif self.args.resume_battle and obs['state']=='battle':
             self.log('resume_battle',reason='从当前战斗画面接管首轮观察')
+            self._reset_battle_state()
             self.started=time.monotonic()-8
         elif obs['state']=='failed':
             self.click('retry',obs['retry_center'])
+            self._reset_battle_state()
             self.last_retry_at=time.monotonic()
             self.started=time.monotonic()
         elif self.args.resume_loot and obs['state']=='loot':
             self.policy.phase='checking'
+            self._reset_battle_state()
             self.started=time.monotonic()-10
             self.log('resume_loot',reason='接管已经打开的战利品面板')
         elif self.args.resume_aim and obs['state']=='aim':
@@ -275,7 +423,7 @@ class Runner:
             if state=='failed':
                 # The failed page can remain visible briefly after a click. Do
                 # not count or click it again while the transition is pending.
-                if self.last_retry_at is not None and now-self.last_retry_at<4:
+                if self.last_retry_at is not None and now-self.last_retry_at<6:
                     continue
                 self.log('failed',retry_count=self.retry_count)
                 if self.policy.keep_run:
@@ -287,6 +435,7 @@ class Runner:
                     return
                 self.retry_count+=1
                 self.policy=GreenFarmPolicy(first_drop_wait_seconds=8)
+                self._reset_battle_state()
                 self.click('retry',obs['retry_center'])
                 self.last_retry_at=time.monotonic()
                 self.started=time.monotonic()
@@ -296,25 +445,42 @@ class Runner:
                 self.log('test_complete',reason='已到胜利结算，请人工确认绿衣实得')
                 return
             if state=='loot':
+                if self.policy.phase in ('lose','finish'):
+                    if self.last_close_loot_at is None or now-self.last_close_loot_at>=1.2:
+                        close_pt=_locate_close_loot(obs['frame'])
+                        self.log('loot_reclose',phase=self.policy.phase,point=close_pt)
+                        self.click('close_loot',close_pt)
+                        self.last_close_loot_at=time.monotonic()
+                    continue
+                if self.policy.phase in ('opening','after_first_fc'):
+                    self.policy.phase='checking'
                 lo=obs['loot']
-                self.log('loot_scan',**asdict(lo))
+                self.log('loot_scan',scroll_page=self.loot_scrolls,**asdict(lo))
                 if lo.status=='uncertain' or (lo.status=='found' and self.args.on_found=='pause'):
                     self.shot('loot-review',image)
                     raise RuntimeError('看到绿衣或相似图标；保留面板供人工确认')
                 if self.panel_first is None:
                     self.panel_first=(now,lo.target_score)
                     continue
-                if now-self.panel_first[0]<1.5: continue
+                wait_needed=1.0 if self.loot_scrolls>0 else 1.5
+                if now-self.panel_first[0]<wait_needed: continue
                 if abs(lo.target_score-self.panel_first[1])>.12:
                     self.shot('loot-unstable',image)
                     raise RuntimeError('战利品列表不稳定，暂停确认')
+                if lo.status=='absent_visible' and lo.can_scroll_down and self.loot_scrolls<4:
+                    self.shot(f'loot-page{self.loot_scrolls+1}-absent',image)
+                    self.scroll_loot(lo)
+                    self.loot_scrolls+=1
+                    self.panel_first=None
+                    continue
                 action=self.policy.decide(FarmObservation(now-self.started,1,False,
                     panel_verdict=lo.status,panel_complete=True))
                 if action!='close_loot': raise RuntimeError(f'意外决策 {action}')
                 self.shot('loot-'+lo.status,image)
-                self.click('close_loot')
+                self.click('close_loot',_locate_close_loot(obs['frame']))
+                self.last_close_loot_at=time.monotonic()
                 self.panel_first=None
-                self.log('loot_decision',next_phase=self.policy.phase)
+                self.log('loot_decision',next_phase=self.policy.phase,scroll_pages=self.loot_scrolls+1)
                 continue
             if state=='battle':
                 if obs['auto_enabled'] is None:
